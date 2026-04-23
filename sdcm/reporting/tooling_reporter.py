@@ -365,6 +365,52 @@ class YcsbVersionReporter(ToolReporterBase):
             YcsbScyllaDriverVersionReporter(version=scylla_driver_version, argus_client=self.argus_client).report()
 
 
+class DynamoDBStreamsValidatorVersionReporter(ToolReporterBase):
+    """Reports DynamoDB Streams Validator version used in SCT."""
+
+    TOOL_NAME = "dynamodb-streams-validator"
+    _YCSB_HOME = "/app"
+
+    def __init__(
+        self,
+        runner: CommandRunner,
+        command_prefix: str = None,
+        argus_client: ArgusSCTClient = None,
+        stress_cmd: str = "",
+    ) -> None:
+        super().__init__(runner, command_prefix, argus_client)
+        self.stress_cmd = stress_cmd
+
+    def _collect_version_info(self) -> None:
+        # TODO
+        self.version = '1.0'
+        self.date = None
+        self.revision_id = None
+
+
+class DynamoDBStreamsStressVersionReporter(ToolReporterBase):
+    """Reports DynamoDB Streams Stress version used in SCT."""
+
+    TOOL_NAME = "dynamodb-streams-stress"
+    _YCSB_HOME = "/app"
+
+    def __init__(
+        self,
+        runner: CommandRunner,
+        command_prefix: str = None,
+        argus_client: ArgusSCTClient = None,
+        stress_cmd: str = "",
+    ) -> None:
+        super().__init__(runner, command_prefix, argus_client)
+        self.stress_cmd = stress_cmd
+
+    def _collect_version_info(self) -> None:
+        # TODO
+        self.version = '1.0'
+        self.date = None
+        self.revision_id = None
+
+
 class VectorStoreVersionReporter(ToolReporterBase):
     TOOL_NAME = "vector-store"
 

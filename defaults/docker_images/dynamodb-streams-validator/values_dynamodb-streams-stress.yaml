@@ -1,0 +1,2 @@
+dynamodb-streams-stress:
+  image: rcrc50/dynamodb-streams-validator-python:v1.0

@@ -119,6 +119,16 @@ class YcsbStressEvent(BaseYcsbStressEvent, abstract=True):
 YcsbStressEvent.add_stress_subevents(failure=Severity.CRITICAL, error=Severity.ERROR)
 
 
+class DynamoDBStreamsValidatorStressEvent(StressEvent, abstract=True):
+    failure: Type[StressEventProtocol]
+    error: Type[StressEventProtocol]
+    start: Type[StressEventProtocol]
+    finish: Type[StressEventProtocol]
+
+
+DynamoDBStreamsValidatorStressEvent.add_stress_subevents(failure=Severity.CRITICAL, error=Severity.ERROR)
+
+
 class CDCReaderStressEvent(BaseYcsbStressEvent, abstract=True):
     failure: Type[StressEventProtocol]
     error: Type[StressEventProtocol]
