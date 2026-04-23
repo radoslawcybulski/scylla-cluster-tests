@@ -245,6 +245,7 @@ class KubernetesCmdRunner(RemoteCmdRunnerBase):
     @retrying(n=3, sleep_time=5, allowed_exceptions=(RetryableNetworkException,))
     def send_files(self, src, dst, delete_dst=False, preserve_symlinks=False, verbose=False, sudo: bool = False):
         # NOTE: sudo parameter is not used here, because we are using kubectl cp command, and not sure if it needed yet
+        LOGGER.info("QWERTY")
         with KEY_BASED_LOCKS.get_lock(f"k8s--{self.kluster.name}--{self.namespace}--{self.pod_name}"):
             KubernetesOps.copy_file(
                 self.kluster, src, f"{self.namespace}/{self.pod_name}:{dst}", container=self.container, timeout=300
@@ -690,6 +691,8 @@ class KubernetesPodRunner(KubernetesCmdRunner):
                 dst='/tmp/c-s_lwt_basic.yaml',
             )
         """
+        LOGGER.info("QWERTY")
+
         with self._mounted_files_lock:
             # Check whether the 'src' file is already mounted to the 'dst' or not
             if existing_src := self._mounted_files_mapping.get(dst):

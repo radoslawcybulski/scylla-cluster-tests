@@ -131,6 +131,7 @@ class RemoteDocker(BaseNode):
         )
 
     def send_files(self, src, dst, **kwargs):
+        LOGGER.info("QWERTY")
         remote_tempfile = self.node.remoter.run("mktemp", verbose=kwargs.get("verbose")).stdout.strip()
         result = self.node.remoter.send_files(src, remote_tempfile, **kwargs)
         result &= self.run(f"mkdir -p {Path(dst).parent}", ignore_status=True, verbose=kwargs.get("verbose")).ok

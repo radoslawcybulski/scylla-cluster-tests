@@ -995,6 +995,8 @@ class LoaderLogCollector(LogCollector):
         FileLog(name="kcl-l*.log", search_locally=True),
         FileLog(name="*cassandra-harry*.log", search_locally=True),
         FileLog(name="hdrh-*.hdr", search_locally=True),
+        FileLog(name="output_produced.log", search_locally=True),
+        FileLog(name="output_expected.log", search_locally=True),
         FileLog(name="*latte*", search_locally=True),
         FileLog(
             name="test.crt",

@@ -326,7 +326,9 @@ class AgentCmdRunner(CommandRunner, RetryMixin):
         """
         src = os.path.expanduser(src)
         sudo_prefix = "sudo " if sudo else ""
+        LOGGER.info("QWERTY")
         if os.path.isdir(src):
+            LOGGER.info("QWERTY")
             with tarfile.open(fileobj=(tar_buffer := io.BytesIO()), mode="w:gz") as tar:
                 tar.add(src, arcname=os.path.basename(src))
             encoded = base64.b64encode(tar_buffer.getvalue()).decode("ascii")
@@ -341,6 +343,7 @@ class AgentCmdRunner(CommandRunner, RetryMixin):
                 timeout=600,
             )
         else:
+            LOGGER.info("QWERTY")
             with open(src, "rb") as f:
                 encoded = base64.b64encode(f.read()).decode("ascii")
 
@@ -356,7 +359,7 @@ class AgentCmdRunner(CommandRunner, RetryMixin):
                 ignore_status=False,
                 timeout=600,
             )
-
+        LOGGER.info("QWERTY completed")
         return True
 
     def receive_files(

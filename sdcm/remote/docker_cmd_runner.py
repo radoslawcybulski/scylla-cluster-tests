@@ -207,6 +207,7 @@ class DockerCmdRunner(CommandRunner):
         """Sends files from the local filesystem to a specified path inside a Docker container"""
         container = self._get_container()
 
+        self.log.info("QWERTY")
         if verbose:
             self.log.debug("Sending local '%s' to container '%s:%s'", src, container.name, dst)
 

@@ -127,6 +127,7 @@ class LocalCmdRunner(CommandRunner):
         timeout: float = 300,
         sudo: bool = False,
     ) -> bool:
+        self.log.info("QWERTY")
         if src == dst:
             return True
         sudo = "sudo " if sudo else ""

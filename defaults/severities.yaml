@@ -65,6 +65,14 @@ YcsbStressEvent.failure: CRITICAL
 YcsbStressEvent.error: ERROR
 YcsbStressEvent.start: NORMAL
 YcsbStressEvent.finish: NORMAL
+DynamoDBStreamsValidatorEvent.failure: CRITICAL
+DynamoDBStreamsValidatorEvent.error: ERROR
+DynamoDBStreamsValidatorEvent.start: NORMAL
+DynamoDBStreamsValidatorEvent.finish: NORMAL
+DynamoDBStreamsStressEvent.failure: CRITICAL
+DynamoDBStreamsStressEvent.error: ERROR
+DynamoDBStreamsStressEvent.start: NORMAL
+DynamoDBStreamsStressEvent.finish: NORMAL
 NdBenchStressEvent.failure: CRITICAL
 NdBenchStressEvent.error: ERROR
 NdBenchStressEvent.start: NORMAL

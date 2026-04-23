@@ -362,7 +362,7 @@ class RemoteCmdRunnerBase(CommandRunner, RetryMixin):
 
         :raises: invoke.exceptions.UnexpectedExit, invoke.exceptions.Failure if the remote copy command failed
         """
-
+        self.log.info("QWERTY")
         self.log.debug("<%s>: Send files (src) %s -> (dst) %s", self.hostname, src, dst)
         # Start a master SSH connection if necessary.
         source_is_dir = False

@@ -1,0 +1,2 @@
+dynamodb-streams-validator:
+  image: rcrc50/dynamodb-streams-validator:v1.0
