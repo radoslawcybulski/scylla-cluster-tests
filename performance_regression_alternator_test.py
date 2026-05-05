@@ -224,8 +224,14 @@ class PerformanceRegressionAlternatorTest(PerformanceRegressionTest):
         node = self.db_cluster.nodes[0]
 
         base_cmd_w = self.params.get("stress_cmd_w")
+        if base_cmd_w:
+            base_cmd_w = base_cmd_w[0]
         base_cmd_r = self.params.get("stress_cmd_r")
+        if base_cmd_r:
+            base_cmd_r = base_cmd_r[0]
         base_cmd_m = self.params.get("stress_cmd_m")
+        if base_cmd_m:
+            base_cmd_m = base_cmd_m[0]
 
         is_basic = mode.startswith("basic")
         run_read = mode in ("full", "basic", "basic-read")
